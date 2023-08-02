@@ -1,6 +1,24 @@
+/* Avatar and Server Borders */
+
+:root {
+    --border-radius-user-icon: 50%;
+    --border-radius-server-icon: 50%;
+    
+    --border-radius-user-icon-active: 50%;
+    --border-radius-server-icon-active: 6px;
+    
+    /* To disable this, replace "--accent" with "--tertiary-background" */
+    --border-active-color: var(--accent);
+}
+
+
+
+
 /* Custom properties and color variables */
 
 :root {
+    --border-radius-channel-icon: var(--border-radius-user-icon);
+    
     --message-box-padding: 10px;
     --scrollbar-thickness: 6px;
     
@@ -34,21 +52,10 @@
     background: linear-gradient(to left, var(--background) -60%, var(--scrollbar-thumb), var(--background) 160%);
 }
 
-[data-scroll-offset]::-webkit-scrollbar-thumb {
-    outline: var(--common-border);
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: var(--light-shadow);
-}
-
-::-webkit-scrollbar-track:vertical {
-    outline: 1px solid rgba(var(--tertiary-background-rgb),0.7);
-}
-
-::-webkit-scrollbar-track:horizontal {
-    outline: 1px solid rgba(var(--tertiary-background-rgb),0.7);
-}
+[data-scroll-offset]::-webkit-scrollbar-thumb {outline: var(--common-border)}
+::-webkit-scrollbar-track {box-shadow: var(--light-shadow)}
+::-webkit-scrollbar-track:vertical {outline: 1px solid rgba(var(--tertiary-background-rgb),0.7)}
+::-webkit-scrollbar-track:horizontal {outline: 1px solid rgba(var(--tertiary-background-rgb),0.7)}
 
 ::-webkit-scrollbar-corner {
     background: linear-gradient(to bottom right, var(--scrollbar-thumb), var(--background));
@@ -62,7 +69,6 @@
 
 .Header-sc-ujh2d9-0 { /* Primary header, seen above the main chat window */
     border-bottom: var(--common-border);
-    border-top: var(--common-border);
     border-right: var(--common-border);
     box-shadow: var(--light-shadow), 5px 2px 5px 5px rgba(0,0,0,0.4);
 	background: var(--primary-header-gradient);
@@ -70,46 +76,40 @@
     text-shadow: 1px 2px 2px black;
 }
 
+/* Message viewport */
+.Channel__ChannelContent-sc-k5myot-1 {background-image: var(--chat-gradient)}
 
-
-.Channel__ChannelContent-sc-k5myot-1 { /* Message viewport */
-    background-image: var(--chat-gradient);
-}
-
-.SidebarBase-sc-1dma6vq-0 .SidebarBase__GenericSidebarBase-sc-1dma6vq-1 { /* Member list */
-    background-image: var(--textbox-gradient);
-    overflow: auto;
+/* Member list */
+.SidebarBase-sc-1dma6vq-0 .SidebarBase__GenericSidebarBase-sc-1dma6vq-1 {
+    background-image: var(--textbox-gradient); overflow: auto;
 }
 
 .Channel__ChannelMain-sc-k5myot-0.DmIgS .SidebarBase-sc-1dma6vq-0{
-    border-right: var(--common-border);
-    border-left: var(--common-border);
+    border-right: var(--common-border); border-left: var(--common-border);
 }
 
 .MemberList__ListCategory-sc-1bwlier-0.fWMCga {
-    height: 39px;
-    padding-top: 16px;
+    height: 39px; padding-top: 16px;
 }
 
-.irQxkq, .NTuGo { /* insert and Moderator names; text-shadow doesn't work properly on the gradient */
-    text-shadow: none;
-}
+/* text-shadow exemption for gradient names */
+.irQxkq, .NTuGo {text-shadow: none}
+
+
+
 
 /* Themes the sidebar */
 
 .HomeSidebar__Navbar-sc-1n8qxkj-0 { /* Secondary header, seen above DMs and in server channel lists */
     border-bottom: var(--common-border);
-    border-top: var(--common-border);
     box-shadow: inset 0 0 0 1px rgba(6, 6, 6, 0.5), 0 0 5px 5px rgba(0,0,0,0.4);
 	background: var(--secondary-header-gradient);
     border-right: 3px double var(--tertiary-background);
     text-shadow: 1px 2px 2px black;
 }
 
-.SidebarBase-sc-1dma6vq-0 { /* Sidebar */
-    background: transparent;
-    border-left: var(--common-border);
-}
+/* Sidebar */
+.SidebarBase-sc-1dma6vq-0 {background: transparent}
 
 .Base-sc-yb16g4-0, .Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0  { /* Server list + Settings Button */
     border-right: 3px double var(--tertiary-background);
@@ -136,7 +136,6 @@
 
 .ServerHeader__ServerBanner-sc-15ursl9-0 {
     box-shadow: var(--common-shadow);
-    
 }
 
 
@@ -176,11 +175,10 @@
     background-image: var(--button-gradient);
     background-color: var(--secondary-header);
     box-shadow: inset 0 1px 0 0 var(--shadow-color);
-    min-height: 56px;
 }
 
 .Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0 { /* Makes the message bar and settings button the same height */
-    height: 56px;
+    height: 55.4px;
 }
 
 .TextAreaAutoSize__Container-sc-1ebfmuf-0, .ckpHTH {
@@ -499,6 +497,21 @@
     background: transparent;
 }
 
+.preact-context-menu .context-menu > span:not([data-disabled=true]) { /* Context menu buttons */
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.preact-context-menu .context-menu > span:not([data-disabled=true]):hover { /* Context menu buttons, hovered */
+    background: #0003;
+    border-left: var(--common-border);
+    border-right: var(--common-border);
+}
+
+.preact-context-menu .context-menu > span > span:hover { /* Fixes a highlighting issue */
+    background: none;
+}
+
 
 
 
@@ -596,13 +609,25 @@
 }
 
 a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0,
-.ItemContainer-sc-176t3v5-0:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0 {
+.ItemContainer-sc-176t3v5-0:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .SidebarBase__GenericSidebarList-sc-1dma6vq-2 ._item_1avxi_1[data-active="true"] img {
     /* Currently selected server or friend */
-    border-color: var(--accent);
+    border-color: var(--border-active-color);
 }
 
-.Image-sc-3bwws8-0:hover, .FallbackBase-sc-3bwws8-1:hover, a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5-0:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0 {
-    border-radius: var(--border-radius);
+.Image-sc-3bwws8-0:hover, .FallbackBase-sc-3bwws8-1:hover {
+    border-radius: var(--border-radius-server-icon-active);
+    transition: 100ms;
+    transition-delay: 70ms;
+}
+
+._item_1avxi_1:hover img, ._item_1avxi_1[data-active="true"] img, .IconBase-sc-igncj4-0.bTjVNf.avatar img:hover {
+    border-radius: var(--border-radius-user-icon-active);
+    transition: 100ms;
+    transition-delay: 70ms;
+}
+
+a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5-0:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0 {
+    border-radius: var(--border-radius-server-icon-active);
     transition: 100ms;
     transition-delay: 70ms;
 }
@@ -623,7 +648,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0,
 
 /* Other miscellaneous changes */
 
-.Image-sc-3bwws8-0, .FallbackBase-sc-3bwws8-1, .SidebarBase__GenericSidebarList-sc-1dma6vq-2 .IconBase__ImageIconBase-sc-igncj4-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5, .IconBase-sc-igncj4-0.bTjVNf.avatar, .IconBase-sc-igncj4-0.bTjVNf._avatar_1avxi_56 img, ._profile_kup3j_21 img { /* Puts borders around icons */
+.FallbackBase-sc-3bwws8-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5 { /* Puts borders around icons */
     border: 1px solid var(--tertiary-foreground);
     padding: 1px;
     border-radius: 50%;
@@ -631,6 +656,18 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0,
     background-image: var(--button-gradient);
     background-color: var(--secondary-header)
 }
+
+.SidebarBase__GenericSidebarList-sc-1dma6vq-2 ._item_1avxi_1 img, ._profile_kup3j_21 img, .bTjVNf img, .Image-sc-3bwws8-0 {
+    border: 1px solid var(--tertiary-foreground);
+    padding: 1px;
+    box-shadow: var(--thin-shadow);
+    background-image: var(--button-gradient);
+    background-color: var(--secondary-header);
+    transition: 100ms;
+}
+
+/* Makes the server icon use the existing border radius variable, since it apparently doesn't by default */
+.kPeClm {border-radius: var(--border-radius-server-icon)}
 
 .SwooshWrapper-sc-176t3v5-1 { /* Themes the server indicator (idk how to mess with the svg so)*/
     height: 54px;
@@ -665,9 +702,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0,
     background: var(--button-gradient);
 }
 
-.RevoltApp__Routes-sc-1613ew5-2 { /* Makes the home screen transparent */
-    background: transparent;
-}
+.RevoltApp__Routes-sc-1613ew5-2 {background: transparent} /* Makes the home screen transparent */
 
 .LineDivider-sc-135498f-0 { /* Horizontal Line Dividers */
 	background: linear-gradient(to left, transparent, rgba(var(--foreground-rgb), 0.7), transparent);
@@ -677,9 +712,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0,
     background: linear-gradient(transparent, rgba(var(--foreground-rgb), 0.7), transparent);
 }
 
-.Base-sc-1kllx7r-0 { /* lowers date to prevent collision with border line */
-    padding: 10px;
-}
+.Base-sc-1kllx7r-0 {padding: 10px} /* lowers date to prevent collision with border line */
 
 .iIKZoW time { /* Removes the background used to hide the border line */
     background: unset;
@@ -739,7 +772,7 @@ svg { /* sexy drop shadows */
     transition: 100ms;
 }
 
-foreignObject svg { /* except they're bugged on safari so none for u */
+svg foreignObject svg, :active > svg foreignObject svg { /* except they're bugged on safari so none for u */
     filter: none;
     transform: none;
 }
@@ -761,6 +794,28 @@ foreignObject svg { /* except they're bugged on safari so none for u */
 ._session_fwdgs_285 svg, .sc-dIUeWJ.kizbFb svg{
     filter: none;
     transform: none;
+}
+
+.Titlebar__TitlebarBase-sc-1ykozpe-0.hwmymO { /* Title bar */
+    border-bottom: var(--common-border);
+    background: var(--secondary-header-gradient);
+}
+
+.hwmymO .actions {
+    margin-right: 7px
+}
+
+.hwmymO .actions div {
+    border: var(--common-border);
+    border-radius: 3px;
+    background-image: var(--button-gradient);
+    background-color: var(--primary-header);
+    margin: 10px 3px 10px 0;
+    height: calc(var(--titlebar-height) - 8px);
+}
+
+.hwmymO .actions div:hover, .hwmymO .actions div.error:hover {
+    background-image: var(--button-gradient);
 }
 
 .RevoltApp__AppContainer-sc-1613ew5-0 { /* Puts a border around the app; it just looks nice in the desktop app tbh :3 */
