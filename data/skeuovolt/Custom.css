@@ -739,6 +739,10 @@ svg { /* sexy drop shadows */
     transition: 100ms;
 }
 
+foreignObject svg { /* except they're bugged on safari so none for u */
+    filter: none;
+}
+
 ._avatar_1avxi_56 {
     filter: drop-shadow(2px 2px 2px #000B);
     transition: 100ms;
