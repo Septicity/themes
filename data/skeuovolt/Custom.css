@@ -741,6 +741,7 @@ svg { /* sexy drop shadows */
 
 foreignObject svg { /* except they're bugged on safari so none for u */
     filter: none;
+    transform: none;
 }
 
 ._avatar_1avxi_56 {
