@@ -4,10 +4,11 @@
 }
 
 .hwmymO .actions div { /* Titlebar Actions */
+    border-radius: 0;
     border-bottom: 1px solid #000F;
     background-image: linear-gradient(#FFF9, #FFF5 47%, transparent 50%, transparent 60%, #FFF3);
     background-color: var(--primary-header);
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
     height: calc(var(--titlebar-height) - 8px);
     box-shadow: 0 0 2px 0px white, inset 0 0 2px 0 white;
 }
