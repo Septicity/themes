@@ -1,0 +1,57 @@
+.hwmymO .actions {
+    margin-right: 8px;
+    width: 100px;
+}
+
+.hwmymO .actions div { /* Titlebar Actions */
+    border-bottom: 1px solid #000F;
+    background-image: linear-gradient(#FFF9, #FFF5 47%, transparent 50%, transparent 60%, #FFF3);
+    background-color: var(--primary-header);
+    margin-bottom: 8px;
+    height: calc(var(--titlebar-height) - 8px);
+    box-shadow: 0 0 2px 0px white, inset 0 0 2px 0 white;
+}
+
+.hwmymO .actions div:nth-child(1) {
+    border-left: 1px solid #000F;
+    border-right: 1px solid #000F;
+    border-bottom-left-radius: 5px;
+    width: 28px;
+}
+
+.hwmymO .actions div:nth-child(2) {
+    border-right: 1px solid #000F;
+    width: 26px;
+}
+
+.hwmymO .actions div:nth-child(3) {
+    border-right: 1px solid #000F;
+    border-bottom-right-radius: 5px;
+    width: 46px;
+    background-color: #920;
+    box-shadow: 0 0 2px 0 white, inset 0 0 2px 0 white;
+}
+
+.hwmymO .actions div:hover, .hwmymO .actions div.error:hover {
+    background-image: linear-gradient(#FFF9, #FFF5 47%, transparent 50%, transparent 60%, #FFF7);
+    box-shadow: 0 0 4px 0 white, inset 0 0 2px 0 white;
+}
+
+.hwmymO .actions div.error:hover {
+    background-image: linear-gradient(#FFF9, #FFF5 47%, transparent 50%, transparent 60%, #F40 90%, #F80D 98%);
+    background-color: #B20;
+    box-shadow: 0 0 6px 0 #F74, 0 0 2px 0px #800, inset 0 0 2px 0 #FBB;
+}
+
+.hwmymO .actions div:active, .hwmymO .actions div.error:active {
+    background-image: linear-gradient(#BBB9, #BBB5 47%, transparent 50%, transparent 60%, #BBB7); 
+    transition: 0ms;
+}
+
+.hwmymO .actions div.error:active {
+    background-image: linear-gradient(#BBB9, #BBB5 47%, transparent 50%, transparent 60%, #F30 90%, #F40 98%)
+}
+
+.hwmymO:active .actions div svg {
+    transform: none;
+}
