@@ -177,6 +177,10 @@
     box-shadow: inset 0 1px 0 0 var(--shadow-color);
 }
 
+.MessageBox__FileAction-sc-jul4fa-3, .MessageBox__Action-sc-jul4fa-2 {
+    margin: 3.7px 0px 0px 0px;
+}
+
 .Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0 { /* Makes the message bar and settings button the same height */
     height: 55.4px;
 }
@@ -234,6 +238,7 @@
     border-top: var(--common-border);
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    width: 100%;
 }
 
 .gILwrq > div, .NPPEn > div { /* New message indicator */
@@ -796,16 +801,16 @@ svg foreignObject svg, :active > svg foreignObject svg { /* except they're bugge
     transform: none;
 }
 
-.Titlebar__TitlebarBase-sc-1ykozpe-0.hwmymO { /* Title bar */
+.Titlebar__TitlebarBase-sc-1ykozpe-0.hwmymO { /* Titlebar */
     border-bottom: var(--common-border);
     background: var(--secondary-header-gradient);
 }
 
-.hwmymO .actions {
+.hwmymO .actions { /* Titlebar actions container */
     margin-right: 7px
 }
 
-.hwmymO .actions div {
+.hwmymO .actions div { /* Titlebar actions */
     border: var(--common-border);
     border-radius: 3px;
     background-image: var(--button-gradient);
