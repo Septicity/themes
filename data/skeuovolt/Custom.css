@@ -93,7 +93,7 @@
 }
 
 /* text-shadow exemption for gradient names */
-.irQxkq, .NTuGo {text-shadow: none}
+.UserShort__Name-sc-1sbe9n1-1 {text-shadow: none; filter: drop-shadow(1px 2px 1px black)}
 
 
 
@@ -113,6 +113,7 @@
 
 .Base-sc-yb16g4-0, .Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0  { /* Server list + Settings Button */
     border-right: 3px double var(--tertiary-background);
+    width: 59px;
 }
 
 .SidebarBase__GenericSidebarList-sc-1dma6vq-2 { /* General sidebar format */
@@ -137,6 +138,13 @@
 .ServerHeader__ServerBanner-sc-15ursl9-0 {
     box-shadow: var(--common-shadow);
 }
+
+.Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0 { /* Makes the message bar and settings button the same height */
+    height: 55.88px;
+    padding-bottom: 5.6px ;
+    padding-top: 5.6px;
+}
+
 
 
 
@@ -179,10 +187,6 @@
 
 .MessageBox__FileAction-sc-jul4fa-3, .MessageBox__Action-sc-jul4fa-2 {
     margin: 3.7px 0px 0px 0px;
-}
-
-.Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0 { /* Makes the message bar and settings button the same height */
-    height: 55.4px;
 }
 
 .TextAreaAutoSize__Container-sc-1ebfmuf-0, .ckpHTH {
@@ -257,7 +261,6 @@
     align-self: center;
     height: 100%;
     padding: 0;
-    
 }
 
 .MessageReply__ReplyBase-sc-utzx7-0 .message { /* Replied message preview */
@@ -594,6 +597,10 @@
     background: transparent;
 }
 
+._attachment_197qa_1._file_197qa_25 ._actions_iu4oa_1 {
+    border: var(--common-border);
+    box-shadow: var(--thin-shadow);
+}
 
 
 
@@ -653,7 +660,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5
 
 /* Other miscellaneous changes */
 
-.FallbackBase-sc-3bwws8-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5 { /* Puts borders around icons */
+.FallbackBase-sc-3bwws8-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5, ._content_kup3j_90 img { /* Puts borders around icons */
     border: 1px solid var(--tertiary-foreground);
     padding: 1px;
     border-radius: 50%;
@@ -676,20 +683,22 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5
 
 .SwooshWrapper-sc-176t3v5-1 { /* Themes the server indicator (idk how to mess with the svg so)*/
     height: 54px;
-    border: var(--common-border);
+    width: 56px;
+    border-top: var(--common-border);
+    border-bottom: var(--common-border);
+    border-left: var(--common-border);
     background-image: var(--button-gradient);
     background-color: var(--primary-header);
     box-shadow: var(--thin-shadow);
     border-top-left-radius: 25%;
     border-bottom-left-radius: 25%;
-    padding: 0 0 10px 10px;
     margin: 26px 0 0 0;
     transition: position 150ms;
     filter: drop-shadow(2px 2px 2px #000B);
 }
 
-.SwooshWrapper-sc-176t3v5-1 path { /* Hides the existing SVG */
-    fill: transparent;
+.SwooshWrapper-sc-176t3v5-1 svg { /* Hides the existing SVG */
+    display: none;
 }
 
 .FilePreview__EmptyEntry-sc-znkm6h-5.icon, .FilePreview__PreviewBox-sc-znkm6h-6 .icon { /* Exempts the file picker icons from the previous entry */
@@ -772,7 +781,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5
     transition: 100ms;
 }
 
-svg { /* sexy drop shadows */
+svg, ._content_kup3j_90 a img { /* sexy drop shadows */
     filter: drop-shadow(2px 2px 2px #000B);
     transition: 100ms;
 }
@@ -787,7 +796,7 @@ svg foreignObject svg, :active > svg foreignObject svg { /* except they're bugge
     transition: 100ms;
 }
 
-:active > svg, :active > ._avatar_1avxi_56, ._item_1avxi_1:active{
+:active > svg, :active > ._avatar_1avxi_56, ._item_1avxi_1:active, ._content_kup3j_90 a:active img{
     transform: translateY(2px);
     filter: brightness(0.85) drop-shadow(2px 2px 2px #000B);
 }
