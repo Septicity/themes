@@ -113,7 +113,10 @@
 
 .Base-sc-yb16g4-0, .Shadow-sc-yb16g4-1 + .ItemContainer-sc-176t3v5-0  { /* Server list + Settings Button */
     border-right: 3px double var(--tertiary-background);
-    width: 59px;
+}
+
+.Base-sc-yb16g4-0 .list {
+    overflow-x: hidden;
 }
 
 .SidebarBase__GenericSidebarList-sc-1dma6vq-2 { /* General sidebar format */
