@@ -189,7 +189,7 @@
 }
 
 .MessageBox__FileAction-sc-jul4fa-3, .MessageBox__Action-sc-jul4fa-2 {
-    margin: 3.7px 0px 0px 0px;
+    margin: 3.7px 0 0 0;
 }
 
 .TextAreaAutoSize__Container-sc-1ebfmuf-0, .ckpHTH {
@@ -237,6 +237,10 @@
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     padding: 0;
+}
+
+.jtuvHh .actions {
+    margin-right: 8px;
 }
 
 .TypingIndicator__Base-sc-1jama4m-0 > div, .ggHcXn > div, .hitXXs > div { /* Typing, old messages indicators */
@@ -663,7 +667,7 @@ a:has(.SwooshWrapper-sc-176t3v5-1) .Image-sc-3bwws8-0, .ItemContainer-sc-176t3v5
 
 /* Other miscellaneous changes */
 
-.FallbackBase-sc-3bwws8-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5, ._content_kup3j_90 img { /* Puts borders around icons */
+.FallbackBase-sc-3bwws8-1, ._friend_sd6wo_33 .IconButton-sc-166lqkp-0, .EmbedInvite__EmbedInviteBase-sc-154n8c6-0 .IconBase__ImageIconBase-sc-igncj4-1, ._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240, ._image_1m2vo_5, ._content_kup3j_90 img:not(.emoji) { /* Puts borders around icons */
     border: 1px solid var(--tertiary-foreground);
     padding: 1px;
     border-radius: 50%;
